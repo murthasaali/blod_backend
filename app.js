@@ -15,7 +15,7 @@ const port = process.env.PORT || 3001;
 configCloudinary()
 // i want to add cors
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://blog-frondend.vercel.app/',
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 }));
