@@ -4,6 +4,8 @@ import { updateUserProfileController } from '../controllers/blogController.js';
 import { Auth } from '../middlewares/Auth.js';
 import { uploadMiddleware } from '../middlewares/fileupload.js';
 
+// router for auth controller
+
 const router = express.Router();
 
 router.post('/register', register);

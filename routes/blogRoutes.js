@@ -4,6 +4,8 @@ import { uploadMiddleware } from '../middlewares/fileupload.js';
 import { Auth } from '../middlewares/Auth.js';
 
 
+// router for postcontroller
+
 const router = express.Router();
 
 router.get('/posts', getAllPostsController);

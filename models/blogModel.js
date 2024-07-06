@@ -1,4 +1,6 @@
 import { sql, poolPromise } from '../config/database.js';
+
+
 const getAllPosts = async () => {
   try {
     const pool = await poolPromise;

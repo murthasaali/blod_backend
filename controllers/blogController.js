@@ -21,6 +21,8 @@ const getAllPostsController = async (req, res, next) => {
   }
 };
 
+// blog controller
+
 const createPostController = async (req, res, next) => {
   try {
     const { title, content } = req.body;

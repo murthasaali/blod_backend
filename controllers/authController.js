@@ -3,6 +3,8 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import CustomError from '../utils/CustomError.js';
 
+// auth controller function
+
 
 const generateToken = (user) => {
   return jwt.sign(

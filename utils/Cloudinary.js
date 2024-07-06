@@ -1,5 +1,5 @@
 import cloudinary from 'cloudinary';
-
+//  cloudinary upload
 function configCloudinary(){
     cloudinary.v2.config({ 
         cloud_name: process.env.CLOUDINARY_NAME, 

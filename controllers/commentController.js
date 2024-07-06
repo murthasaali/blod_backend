@@ -1,5 +1,7 @@
 import { getAllComments, createComment } from '../models/commentModel.js';
 
+
+// comment controller
 const getAllCommentsController = async (req, res, next) => {
   const { postID } = req.params;
   console.log(postID)
