@@ -1,5 +1,5 @@
 import express from 'express';
-import { getAllPostsController, createPostController, editPostController, deletePostController, getPostByIDController, getUserByIDController, getUserAllPosts, updateUserProfileController, getPaginatedPostsController } from '../controllers/blogController.js';
+import { getAllPostsController, createPostController, editPostController, deletePostController, getPostByIDController, getUserByIDController, getUserAllPosts, updateUserProfileController, getPaginatedPostsController } from '../controllers/postController.js';
 import { uploadMiddleware } from '../middlewares/fileupload.js';
 import { Auth } from '../middlewares/Auth.js';
 

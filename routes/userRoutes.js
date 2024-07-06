@@ -1,6 +1,6 @@
 import express from 'express';
-import { register, login, logout } from '../controllers/authController.js';
-import { updateUserProfileController } from '../controllers/blogController.js';
+import { register, login, logout } from '../controllers/userController.js';
+import { updateUserProfileController } from '../controllers/postController.js';
 import { Auth } from '../middlewares/Auth.js';
 import { uploadMiddleware } from '../middlewares/fileupload.js';
 

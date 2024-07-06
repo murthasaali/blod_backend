@@ -3,8 +3,8 @@ import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import configCloudinary from './utils/Cloudinary.js'
 import cors from "cors"
-import authRoutes from './routes/authRoutes.js';
-import blogRoutes from './routes/blogRoutes.js';
+import authRoutes from './routes/userRoutes.js';
+import blogRoutes from './routes/postRoutes.js';
 import commentRoutes from './routes/commentRoutes.js';
 import CustomError from './utils/CustomError.js';
 

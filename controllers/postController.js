@@ -7,7 +7,7 @@ import {
   getPaginatedPosts,
   getTotalPostsCount,
   deletePost,
-} from "../models/blogModel.js";
+} from "../models/postModal.js";
 import { findUserByID, updateUserProfile } from "../models/userModel.js";
 import { uploadToCloudinary } from "../utils/Cloudinary.js";
 import CustomError from "../utils/CustomError.js";

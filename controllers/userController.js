@@ -14,6 +14,7 @@ const generateToken = (user) => {
       expiresIn: "1d",
     }
   );
+  
 };
 
 const register = async (req, res, next) => {
