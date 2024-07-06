@@ -1,12 +1,12 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
-import configCloudinary from './utils/Cloudinary.js'
+import configCloudinary from './utilites/CloudinaryUpload.js'
 import cors from "cors"
 import authRoutes from './routes/userRoutes.js';
 import blogRoutes from './routes/postRoutes.js';
 import commentRoutes from './routes/commentRoutes.js';
-import CustomError from './utils/CustomError.js';
+import CustomError from './utilites/CustomError.js';
 
 dotenv.config();
 

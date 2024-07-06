@@ -1,6 +1,6 @@
 import express from 'express';
 import { getAllCommentsController, createCommentController } from '../controllers/commentController.js';
-import { Auth } from '../middlewares/Auth.js';
+import { Auth } from '../middlewares/authMiddeware.js';
 
 //  router for comment cnotroller
 

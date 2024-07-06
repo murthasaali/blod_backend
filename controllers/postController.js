@@ -9,8 +9,8 @@ import {
   deletePost,
 } from "../models/postModal.js";
 import { findUserByID, updateUserProfile } from "../models/userModel.js";
-import { uploadToCloudinary } from "../utils/Cloudinary.js";
-import CustomError from "../utils/CustomError.js";
+import { uploadToCloudinary } from "../utilites/CloudinaryUpload.js";
+import CustomError from "../utilites/CustomError.js";
 import fs from "fs";
 const getAllPostsController = async (req, res, next) => {
   try {

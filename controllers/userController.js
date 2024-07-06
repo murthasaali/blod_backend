@@ -1,7 +1,7 @@
 import { createUser, findUserByEmail, findUserByUsername } from '../models/userModel.js';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
-import CustomError from '../utils/CustomError.js';
+import CustomError from '../utilites/CustomError.js';
 
 // auth controller function
 
@@ -14,7 +14,7 @@ const generateToken = (user) => {
       expiresIn: "1d",
     }
   );
-  
+
 };
 
 const register = async (req, res, next) => {

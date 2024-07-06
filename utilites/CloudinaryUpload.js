@@ -8,6 +8,7 @@ function configCloudinary(){
     });      
 }
 
+
 export const uploadToCloudinary = async (filePath, folderName) => {
   try {
     

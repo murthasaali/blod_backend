@@ -1,7 +1,7 @@
 
 // import { findUserByID } from "../models/userModel.js";
 import { findUserByID } from "../models/userModel.js";
-import CustomError from "../utils/CustomError.js";
+import CustomError from "../utilites/CustomError.js";
 import jwt from "jsonwebtoken";
 export const Auth = async (req, res, next) => {
     try {

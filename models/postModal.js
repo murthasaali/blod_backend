@@ -1,4 +1,4 @@
-import { sql, poolPromise } from '../config/database.js';
+import { sql, poolPromise } from '../config/databaseConfig.js';
 
 
 const getAllPosts = async () => {
