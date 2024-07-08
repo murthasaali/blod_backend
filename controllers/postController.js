@@ -15,6 +15,7 @@ import fs from "fs";
 const getAllPostsController = async (req, res, next) => {
   try {
     const posts = await getAllPosts();
+    console.log(posts)
     res.status(200).json({ status: true, posts });
   } catch (error) {
     next(error);

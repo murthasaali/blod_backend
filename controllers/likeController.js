@@ -35,7 +35,7 @@ const createLikeController = async (req, res, next) => {
       // Check if the error is due to duplicate like
       if (error.message === 'User has already liked this post') {
         return res.status(400).json({
-          status: false,
+          status: true,
           message: 'you already liked this post'
         });
       }

@@ -46,6 +46,7 @@ const createLike = async ({ postID, userID }) => {
         .input('postID', sql.Int, postID)
         .input('userID', sql.Int, userID)
         .query('SELECT COUNT(*) AS count FROM Likes WHERE postID = @postID AND userID = @userID');
+        console.log(result.recordsets[0].count>0)
       
       return result.recordset[0].count > 0;
     } catch (error) {
