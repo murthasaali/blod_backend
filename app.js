@@ -6,6 +6,7 @@ import cors from "cors"
 import authRoutes from './routes/userRoutes.js';
 import blogRoutes from './routes/postRoutes.js';
 import commentRoutes from './routes/commentRoutes.js';
+import likeRoutes from './routes/likeRoutes.js'
 import CustomError from './utilites/CustomError.js';
 
 dotenv.config();
@@ -26,6 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/auth', authRoutes);
 app.use('/api', blogRoutes);
 app.use('/api', commentRoutes);
+app.use('/api', likeRoutes);
 
 // app.use((err, req, res, next) => {
 //   const statusCode = err.statusCode || 500;

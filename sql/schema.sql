@@ -27,3 +27,13 @@ CREATE TABLE Comments (
   FOREIGN KEY (postID) REFERENCES BlogPosts(postID),
   FOREIGN KEY (userID) REFERENCES Users(userID)
 );
+
+CREATE TABLE Likes (
+  likeID INT PRIMARY KEY IDENTITY,
+  postID INT,
+  userID INT,
+  created_at DATETIME DEFAULT GETDATE(),
+  FOREIGN KEY (postID) REFERENCES Posts(postID),
+  FOREIGN KEY (userID) REFERENCES Users(userID)
+);
+
