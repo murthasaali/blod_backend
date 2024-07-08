@@ -7,11 +7,21 @@ const getAllPosts = async () => {
   try {
     const pool = await poolPromise;
     const result = await pool.request().query(`
-      SELECT p.*, u.username, u.email, 
-        (SELECT COUNT(*) FROM Likes l WHERE l.postID = p.postID) AS likeCount
-      FROM Posts p
-      JOIN Users u ON p.authorID = u.userID
-      ORDER BY p.created_at DESC
+      SELECT 
+          p.*,
+          u.username,
+          u.email,
+          COUNT(l.likeID) AS likeCount
+      FROM 
+          Posts p
+      JOIN 
+          Users u ON p.authorID = u.userID
+      LEFT JOIN 
+          Likes l ON p.postID = l.postID
+      GROUP BY 
+          p.postID, p.title, p.content, p.authorID, p.created_at, p.imageUrl, u.username, u.email
+      ORDER BY 
+          p.created_at DESC
     `);
     return result.recordset;
   } catch (error) {
@@ -19,6 +29,7 @@ const getAllPosts = async () => {
     throw error;
   }
 };
+
 const createPost = async ({ title, content, authorID, imageUrl }) => {
   try {
     const pool = await poolPromise;

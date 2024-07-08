@@ -13,17 +13,35 @@ const getLikeCountController = async (req, res, next) => {
   }
 };
 
+
 const createLikeController = async (req, res, next) => {
-  const { postID } = req.params;
-  const userID = req.user.userID;
-  try {
-    console.log("postID :" + postID);
-    const result = await createLike({ postID, userID });
-    const likeCount = await getLikeCount(postID);
-    res.status(201).send({ status: true, message: 'Like added successfully', likeCount });
-  } catch (error) {
-    next(error);
-  }
-};
+    const { postID } = req.params;
+    const userID = req.user.userID;
+    
+    try {
+      // Create a new like for the post
+      await createLike({ postID, userID });
+      
+      // Get the updated like count for the post
+      const likeCount = await getLikeCount(postID);
+      
+      // Send response with status 201 and updated likeCount
+      res.status(201).json({
+        status: true,
+        message: 'Like added successfully',
+        likeCount: likeCount
+      });
+    } catch (error) {
+      // Check if the error is due to duplicate like
+      if (error.message === 'User has already liked this post') {
+        return res.status(400).json({
+          status: false,
+          message: 'you already liked this post'
+        });
+      }
+      // Otherwise, pass any other errors to the error handling middleware
+      next(error);
+    }
+  };
 
 export { getLikeCountController, createLikeController };
